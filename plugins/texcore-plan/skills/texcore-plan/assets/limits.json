@@ -1,0 +1,13 @@
+{
+  "page_total_max": 10,
+  "page_budget": {"cover": 1.0, "S_I1": 0.8, "S_I2": 2.0, "S_II1": 1.2, "S_II2_PLAN": 0.5, "S_II2_UPGRADE": 0.4, "S_III1": 1.0, "S_III2": 1.0, "S_III3": 0.2, "S_EN1": 0.2, "S_EN2": 0.2, "S_EN3": 0.2},
+  "block": {
+    "heading": 40, "subheading": 50, "para": 420, "bullet_item": 140, "callout": 120,
+    "table_caption": 60, "table_cell": 90, "figure_caption": 70, "figure_source": 90, "figure_proves": 70,
+    "max_bullets_per_block": 6, "max_table_rows": 12, "max_table_cols": 7
+  },
+  "section_chars": {"S_I1": 1300, "S_I2": 3200, "S_II1": 2000, "S_II2_PLAN": 900, "S_II2_UPGRADE": 700, "S_III1": 1600, "S_III2": 1400, "S_III3": 400, "S_EN1": 520, "S_EN2": 520, "S_EN3": 520},
+  "sentence_max_chars": 80,
+  "figures_per_section_max": 3,
+  "evidence_figures_min": {"S_I2": 2, "S_II1": 1, "S_III1": 1, "S_III2": 1}
+}

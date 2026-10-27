@@ -1,0 +1,448 @@
+{
+  "master": "template_master.hwpx",
+  "source": "사업신청서_원본양식_2026.hwp",
+  "pages_empty": 6,
+  "token_format": "{{NAME}}",
+  "checkboxes": [
+    "□수도권",
+    "□충청권",
+    "□대경권",
+    "□호남권",
+    "□동남권",
+    "□여성특화형",
+    "□출연(연)특화형",
+    "□ 신청 실험실창업혁신단 파악 불가",
+    "□ 해외교육형",
+    "□ 국내교육형",
+    "□ 여성특화형",
+    "□ 출연(연)특화형"
+  ],
+  "checkbox_rule": "토큰 없이 양식 그대로 둔다 — 채움 단계 replacements에서 '□충청권'→'■충청권'처럼 텍스트 치환",
+  "section_tokens": [
+    "S_I1",
+    "S_I2",
+    "S_II1",
+    "S_II2_PLAN",
+    "S_II2_UPGRADE",
+    "S_III1",
+    "S_III2",
+    "S_III3",
+    "S_EN1",
+    "S_EN2",
+    "S_EN3"
+  ],
+  "qa_headings": [
+    "1. 실험실창업 탐색의 추진 동기와 목표",
+    "2. 실험실 창업(탐색) 아이템",
+    "1. 핵심기술의 개요",
+    "□ 핵심기술 확보계획",
+    "□ 핵심기술 up-grade 계획",
+    "1. 창업(탐색) 아이템의 시작품(시제품) 제작계획",
+    "2. 사업화 추진계획",
+    "3. 창업 추진 애로사항 및 건의사항",
+    "1) What is the core technology",
+    "2) What is the main problem",
+    "3) What makes your solutions"
+  ],
+  "notes": [
+    "작성요령 박스 11개(본문 9 + Ⅳ 표 위 2)와 표지 '<작성 시 주의 사항>' 박스, 표지 국문 팀명 '(제출 시 삭제)' 안내문 삭제",
+    "남긴 양식 주석: Ⅱ-2-1 표 아래 '※ 핵심기술의 지식재산권 현황…' 3줄, TRL '※ TRL 9단계…', Ⅳ '※ EL 또는 EM이 졸업생일 경우…' 박스·주석 2줄",
+    "Ⅰ-2의 '□ 창업(탐색) 아이템의 컨셉/목표 고객/차별성/시장전망' 소제목은 제거 — sections.S_I2의 heading 블록으로 쓴다",
+    "'□ 핵심기술의 권리인 및 발명자와의 관계' 앞 강제 쪽 나눔 해제(Ⅲ·Ⅳ 장 시작 쪽 나눔은 유지)",
+    "표 안 예시('<예> 석사수료 / 박사과정중', '<예> 학부과정중', '-')와 표지 EL 학위 예시 삭제",
+    "기술분야 칸은 파란 안내문을 남기고 그 아래 줄에 {{CV_FIELD}}",
+    "본문 앵커 문단은 맑은 고딕 10pt(charPr 9)·문단모양 3 — 채움 엔진이 블록마다 글자·문단 모양을 다시 지정"
+  ],
+  "anchors": [
+    {
+      "token": "{{CV_ORG}}",
+      "where": "표지 신청기관 기관명",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_UNIV}}",
+      "where": "표지 기관구분 '대학( )' 괄호 안(해당 시 'O' 또는 '√')",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_GRI}}",
+      "where": "표지 기관구분 '출연(연)( )' 괄호 안(해당 없으면 '  ')",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_ADDR}}",
+      "where": "표지 신청기관 주소",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_TEAM_KO}}",
+      "where": "표지 탐색팀명 국문(띄어쓰기 포함 10자 이내 — '(제출 시 삭제)' 안내문은 마스터에서 삭제)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_TEAM_EN}}",
+      "where": "표지 탐색팀명 영문",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_ITEM_KO}}",
+      "where": "표지 아이템명 국문",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_ITEM_EN}}",
+      "where": "표지 아이템명 영문",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_FIELD}}",
+      "where": "표지 창업아이템 기술분야 — 파란 안내문('예) IT, NT…') 아래 새 줄(IT/BT/NT/ET/ST/CT/기타 중 1)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_MFG}}",
+      "where": "표지 업종 '제조업( )' 괄호 안",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_NONMFG}}",
+      "where": "표지 업종 '비제조업( )' 괄호 안",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_NAME}}",
+      "where": "표지 EL 성명('(서명)' 앞)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_BIRTH}}",
+      "where": "표지 EL 생년월일",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_ORG}}",
+      "where": "표지 EL 소속기관/학과(부서)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_MAJOR}}",
+      "where": "표지 EL 전공분야",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_DEGREE}}",
+      "where": "표지 EL 최종학위(EL은 최종학위/현재학적) — 양식 예시('<예> 석사과정/…')는 삭제",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_TEL}}",
+      "where": "표지 EL Tel",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_PHONE}}",
+      "where": "표지 EL 핸드폰",
+      "kind": "cell"
+    },
+    {
+      "token": "{{EL_EMAIL}}",
+      "where": "표지 EL E-mail",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_NAME}}",
+      "where": "표지 PM 성명('(서명)' 앞)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_BIRTH}}",
+      "where": "표지 PM 생년월일",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_ORG}}",
+      "where": "표지 PM 소속기관/학과(부서)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_MAJOR}}",
+      "where": "표지 PM 전공분야",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_DEGREE}}",
+      "where": "표지 PM 최종학위(EL은 최종학위/현재학적)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_TEL}}",
+      "where": "표지 PM Tel",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_PHONE}}",
+      "where": "표지 PM 핸드폰",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PM_EMAIL}}",
+      "where": "표지 PM E-mail",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_NAME}}",
+      "where": "표지 PI 성명('(서명)' 앞)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_BIRTH}}",
+      "where": "표지 PI 생년월일",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_ORG}}",
+      "where": "표지 PI 소속기관/학과(부서)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_MAJOR}}",
+      "where": "표지 PI 전공분야",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_DEGREE}}",
+      "where": "표지 PI 최종학위(EL은 최종학위/현재학적)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_TEL}}",
+      "where": "표지 PI Tel",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_PHONE}}",
+      "where": "표지 PI 핸드폰",
+      "kind": "cell"
+    },
+    {
+      "token": "{{PI_EMAIL}}",
+      "where": "표지 PI E-mail",
+      "kind": "cell"
+    },
+    {
+      "token": "{{CV_DATE}}",
+      "where": "표지 하단 제출일('2026년 1월 15일' 형식)",
+      "kind": "cell"
+    },
+    {
+      "token": "{{S_I1}}",
+      "where": "Ⅰ-1 실험실창업 탐색의 추진 동기와 목표 본문",
+      "kind": "para",
+      "heading": "1. 실험실창업 탐색의 추진 동기와 목표"
+    },
+    {
+      "token": "{{S_I2}}",
+      "where": "Ⅰ-2 아이템 본문(양식의 □ 소제목 4개는 마스터에서 제거 — heading 블록으로 다시 쓴다)",
+      "kind": "para",
+      "heading": "2. 실험실 창업(탐색) 아이템"
+    },
+    {
+      "token": "{{S_II1}}",
+      "where": "Ⅱ-1 핵심기술의 개요(세 문장 공식)",
+      "kind": "para",
+      "heading": "1. 핵심기술의 개요"
+    },
+    {
+      "token": "{{S_II2_PLAN}}",
+      "where": "Ⅱ-2-2 '□ 핵심기술 확보계획' 아래",
+      "kind": "para",
+      "heading": "□ 핵심기술 확보계획"
+    },
+    {
+      "token": "{{S_II2_UPGRADE}}",
+      "where": "Ⅱ-2-2 '□ 핵심기술 up-grade 계획' 아래",
+      "kind": "para",
+      "heading": "□ 핵심기술 up-grade 계획"
+    },
+    {
+      "token": "{{S_III1}}",
+      "where": "Ⅲ-1 시작품(시제품) 제작계획",
+      "kind": "para",
+      "heading": "1. 창업(탐색) 아이템의 시작품(시제품) 제작계획"
+    },
+    {
+      "token": "{{S_III2}}",
+      "where": "Ⅲ-2 사업화 추진계획(추진일정 도표)",
+      "kind": "para",
+      "heading": "2. 사업화 추진계획"
+    },
+    {
+      "token": "{{S_III3}}",
+      "where": "Ⅲ-3 애로사항·건의사항(선택)",
+      "kind": "para",
+      "heading": "3. 창업 추진 애로사항 및 건의사항"
+    },
+    {
+      "token": "{{S_EN1}}",
+      "where": "Summary 영문 질문 1) 아래",
+      "kind": "para",
+      "heading": "1) What is the core technology"
+    },
+    {
+      "token": "{{S_EN2}}",
+      "where": "Summary 영문 질문 2) 아래",
+      "kind": "para",
+      "heading": "2) What is the main problem"
+    },
+    {
+      "token": "{{S_EN3}}",
+      "where": "Summary 영문 질문 3) 아래(문서 끝)",
+      "kind": "para",
+      "heading": "3) What makes your solutions"
+    },
+    {
+      "token": "{{T_PATENTS}}",
+      "where": "Ⅱ-2-1 '□ 특허 출원/등록 실적' 표 첫 데이터행 첫 셀(9열: 특허명·출원년도·출원국·출원번호·출원인·등록년도·등록국·등록번호·등록인)",
+      "kind": "table_first_cell",
+      "data_rows": 4,
+      "cols": 9,
+      "header": [
+        "특허명",
+        "출원년도",
+        "출원국",
+        "출원번호",
+        "출원인",
+        "등록년도",
+        "등록국",
+        "등록번호",
+        "등록인"
+      ],
+      "first_col_labels": null
+    },
+    {
+      "token": "{{T_OTHERIP}}",
+      "where": "Ⅱ-2-1 '□ 기타 지식재산권' 표 첫 데이터행 첫 셀(5열: 유형·제목·등록년도·권리인·등록번호)",
+      "kind": "table_first_cell",
+      "data_rows": 4,
+      "cols": 5,
+      "header": [
+        "유형(S/W 등)",
+        "제 목",
+        "등록년도",
+        "권리인",
+        "등록번호"
+      ],
+      "first_col_labels": null
+    },
+    {
+      "token": "{{T_IPREL}}",
+      "where": "Ⅱ-2-1 '□ 핵심기술의 권리인 및 발명자와의 관계' 표 첫 데이터행 첫 셀(6열)",
+      "kind": "table_first_cell",
+      "data_rows": 2,
+      "cols": 6,
+      "header": [
+        "구분",
+        "제 목",
+        "출원 또는 등록번호",
+        "권리인",
+        "발명자",
+        "권리인 및 발명자와의 관계"
+      ],
+      "first_col_labels": null
+    },
+    {
+      "token": "{{T_TEAM}}",
+      "where": "Ⅳ-1 탐색팀 구성 표 EL 행 '성명' 셀(9열, 첫 열 라벨 EL/PM/PI/EM 유지)",
+      "kind": "table_first_cell",
+      "data_rows": 6,
+      "cols": 9,
+      "header": [
+        "구분",
+        "성명",
+        "생년월일",
+        "소속기관/학과(부서)",
+        "최종학위/현재학적",
+        "핸드폰",
+        "이메일",
+        "EL과의 관계",
+        "성별"
+      ],
+      "first_col_labels": [
+        "EL",
+        "PM",
+        "PI",
+        "EM",
+        "EM",
+        "EM"
+      ]
+    },
+    {
+      "token": "{{T_CAREER}}",
+      "where": "Ⅳ-2 주요 경력 및 역할 표 EL 행 '성명' 셀(6열, 첫 열 라벨 유지)",
+      "kind": "table_first_cell",
+      "data_rows": 6,
+      "cols": 6,
+      "header": [
+        "구분",
+        "성명",
+        "소속",
+        "전공분야",
+        "주요경력",
+        "역할"
+      ],
+      "first_col_labels": [
+        "EL",
+        "PM",
+        "PI",
+        "EM",
+        "EM",
+        "EM"
+      ]
+    },
+    {
+      "token": "{{TRL_1}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 1단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_2}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 2단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_3}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 3단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_4}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 4단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_5}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 5단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_6}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 6단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_7}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 7단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_8}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 8단계 칸('(    )' 자리)",
+      "kind": "trl"
+    },
+    {
+      "token": "{{TRL_9}}",
+      "where": "Ⅱ-2-2 TRL 표 '연구단계(선택)' 9단계 칸('(    )' 자리)",
+      "kind": "trl"
+    }
+  ]
+}

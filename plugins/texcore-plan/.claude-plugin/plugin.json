@@ -1,0 +1,6 @@
+{
+  "name": "texcore-plan",
+  "description": "텍스코어 사업신청서 멀티 에이전트 하네스 — texcore-plan 스킬(오케스트레이터) + 6 서브에이전트(tp-intake·writer·panel·researcher·designer·finalizer) + Python 하네스 스크립트(검증·숫자 추적·증거 도식·한글 COM 주입·쪽 검수)",
+  "version": "0.1.0",
+  "author": { "name": "정석Biz (이동건)" }
+}

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/_out/
+*_TexcorePlan/
+*.tmp
+~$*
+.superpowers/

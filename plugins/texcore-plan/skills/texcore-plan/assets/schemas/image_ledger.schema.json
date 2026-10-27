@@ -1,0 +1,5 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "image_ledger (texcore-plan)", "type": "object", "required": ["images"],
+ "properties": {"images": {"type": "array", "items": {"type": "object", "required": ["file", "license", "needs_human_review", "used_in_sections"],
+   "properties": {"file": {"type": "string"}, "url": {"type": "string"}, "page_url": {"type": "string"}, "title": {"type": "string"}, "author": {"type": "string"},
+     "license": {"enum": ["team", "quote", "cc", "public", "official", "generated", "unknown"]}, "license_note": {"type": "string"},
+     "retrieved": {"type": "string"}, "used_in_sections": {"type": "array", "items": {"type": "string"}}, "needs_human_review": {"type": "boolean"}}}}}}

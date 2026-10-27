@@ -1,0 +1,13 @@
+{
+  "name": "jsbiz-texcore-plan",
+  "owner": { "name": "정석Biz (이동건)", "url": "https://www.youtube.com/@정석Biz" },
+  "metadata": { "description": "정석Biz 텍스코어(실험실창업탐색팀) 사업신청서 멀티 에이전트 하네스 마켓플레이스", "version": "0.1.0" },
+  "plugins": [
+    {
+      "name": "texcore-plan",
+      "source": "./plugins/texcore-plan",
+      "description": "창업(탐색)팀 자료 폴더 → 텍스코어(공공기술기반 시장연계 창업탐색 지원사업·실험실창업탐색팀) 공식 사업신청서 hwp 양식 자동 작성. 6 에이전트(자료 판독·결론 박스형 본문·실제 평가표 5인 모의심사·KIPRIS/시장 근거 조사·증거 도식 12종 + 한글 주입·심사 대비 패키지) + 숫자 추적 하네스. 자료에 없는 숫자는 [기입 필요]/[확보 필요]로 남긴다",
+      "author": { "name": "정석Biz (이동건)" }
+    }
+  ]
+}

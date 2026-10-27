@@ -1,0 +1,10 @@
+{"skill": "texcore-plan", "cases": [
+  {"id": "full_run", "input": "evals/fixtures/진동지기", "command": "/texcore-plan \"evals/fixtures/진동지기\" --type 해외 --yes --out tests/_out/evals",
+   "expect": ["10_final/*_사업신청서.hwpx", "10_final/심사대비_패키지.md", "10_final/팀_확인사항.md", "05_review/trace_report.json:untraced==[]", "09_build/qa_report.md:BLOCKING: 0", "pages <= 10", "02_team_questions.md exists"],
+   "requires": ["Windows", "한글(HWP)"]},
+  {"id": "mac_until_figures", "input": "evals/fixtures/진동지기", "command": "/texcore-plan \"evals/fixtures/진동지기\" --type 해외 --yes --out tests/_out/evals_mac",
+   "expect": ["08_figures/figures_report.json: all ok", "08_fill_spec.json exists", "안내: Windows+한글에서 --from 5"],
+   "requires": ["macOS"]},
+  {"id": "resume_from_4_with_answers", "input": "evals/fixtures/진동지기 + 02_team_answers.md", "command": "/texcore-plan \"evals/fixtures/진동지기\" --from 4 --yes",
+   "expect": ["[기입 필요] 감소", "07_draft_v2.json changes[] records answers", "05_review re-scored"]}
+]}

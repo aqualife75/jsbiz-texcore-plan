@@ -1,0 +1,48 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "draft (texcore-plan 04_draft_v1 / 07_draft_v2)", "type": "object",
+ "required": ["team", "edu_type", "cover", "sections", "fixed_tables", "figures"],
+ "properties": {
+   "team": {"type": "string"}, "edu_type": {"enum": ["해외", "국내"]},
+   "cover": {"type": "object", "required": ["region", "org", "org_type", "team_ko", "team_en", "item_ko", "item_en", "tech_field", "industry", "EL", "PM", "PI"],
+     "properties": {
+       "region": {"enum": ["수도권", "충청권", "대경권", "호남권", "동남권", "여성특화형", "출연(연)특화형", "파악불가"]},
+       "women": {"type": "boolean"}, "gri": {"type": "boolean"},
+       "org": {"type": "string"}, "org_type": {"enum": ["대학", "출연연"]}, "address": {"type": "string"},
+       "team_ko": {"type": "string", "maxLength": 12}, "team_en": {"type": "string"}, "item_ko": {"type": "string"}, "item_en": {"type": "string"},
+       "tech_field": {"type": "string"}, "industry": {"enum": ["제조업", "비제조업"]}, "date": {"type": "string"},
+       "EL": {"$ref": "#/definitions/cover_person"}, "PM": {"$ref": "#/definitions/cover_person"}, "PI": {"$ref": "#/definitions/cover_person"}}},
+   "sections": {"type": "array", "minItems": 8, "items": {"type": "object", "required": ["id", "title", "judge_question", "governing", "blocks"],
+     "properties": {
+       "id": {"enum": ["S_I1", "S_I2", "S_II1", "S_II2_PLAN", "S_II2_UPGRADE", "S_III1", "S_III2", "S_III3", "S_EN1", "S_EN2", "S_EN3"]},
+       "title": {"type": "string"}, "judge_question": {"type": "string"}, "governing": {"type": "string"},
+       "page_budget": {"type": "number"},
+       "blocks": {"type": "array", "minItems": 1, "items": {"$ref": "#/definitions/block"}}}}},
+   "fixed_tables": {"type": "object", "required": ["patents", "other_ip", "ip_relations", "trl", "team_members", "team_careers"],
+     "properties": {
+       "patents": {"type": "array", "items": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "string"}}},
+       "other_ip": {"type": "array", "items": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string"}}},
+       "ip_relations": {"type": "array", "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}}},
+       "trl": {"type": "object", "required": ["level"], "properties": {"level": {"type": "integer", "minimum": 1, "maximum": 9}, "evidence": {"type": "string"}}},
+       "team_members": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "string"}}},
+       "team_careers": {"type": "array", "minItems": 1, "items": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}}}}},
+   "figures": {"type": "array", "items": {"type": "object", "required": ["id", "type", "section_id", "data"],
+     "properties": {"id": {"type": "string"}, "type": {"type": "string"}, "section_id": {"type": "string"}, "data": {"type": "object"},
+                    "width_px": {"type": "integer"}, "font_scale": {"type": "number"}, "width_mm": {"type": "number"},
+                    "caption": {"type": "string"}, "source": {"type": "string"}, "proves": {"type": "string"}}}},
+   "to_secure": {"type": "array", "items": {"type": "object", "properties": {"item": {"type": "string"}, "why": {"type": "string"}, "section_id": {"type": "string"}}}},
+   "changes": {"type": "array", "items": {"type": "object", "properties": {"section_id": {"type": "string"}, "before": {"type": "string"}, "after": {"type": "string"}, "reason": {"type": "string"}, "issue_id": {"type": "string"}}}}
+ },
+ "definitions": {
+   "cover_person": {"type": "object", "properties": {"name": {"type": "string"}, "birth": {"type": "string"}, "org_dept": {"type": "string"}, "major": {"type": "string"},
+     "degree_status": {"type": "string"}, "tel": {"type": "string"}, "phone": {"type": "string"}, "email": {"type": "string"}}},
+   "block": {"type": "object", "required": ["type"],
+     "properties": {
+       "type": {"enum": ["heading", "subheading", "para", "bullets", "table", "figure", "figure_ref", "callout", "spacer"]},
+       "text": {"type": "string"}, "items": {"type": "array", "items": {"type": "string"}},
+       "caption": {"type": "string"}, "columns": {"type": "array", "items": {"type": "string"}},
+       "rows": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}},
+       "col_widths_mm": {"type": "array", "items": {"type": "number"}}, "font_pt": {"type": "number"},
+       "images": {"type": "array", "items": {"type": "object", "required": ["path"], "properties": {"path": {"type": "string"}, "width_mm": {"type": "number"}}}},
+       "figure_id": {"type": "string"}, "width_mm": {"type": "number"},
+       "source": {"type": "string"}, "proves": {"type": "string"},
+       "kind": {"enum": ["fact", "estimate", "plan"]}, "evidence_ids": {"type": "array", "items": {"type": "string"}}}}
+ }}

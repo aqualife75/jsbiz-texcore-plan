@@ -1,0 +1,21 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "outline (texcore-plan)", "type": "object",
+ "required": ["team", "edu_type", "sections", "figures_plan"],
+ "properties": {
+   "team": {"type": "string"}, "edu_type": {"enum": ["해외", "국내"]},
+   "trend_label": {"type": "object", "properties": {"keyword": {"type": "string"}, "grounds": {"type": "array", "items": {"type": "string"}}, "use": {"type": "boolean"}}},
+   "sections": {"type": "array", "minItems": 8, "items": {"type": "object",
+     "required": ["id", "title", "score_item", "judge_question", "governing", "page_budget", "data_status", "evidence_plan"],
+     "properties": {
+       "id": {"enum": ["S_I1", "S_I2", "S_II1", "S_II2_PLAN", "S_II2_UPGRADE", "S_III1", "S_III2", "S_III3", "S_EN1", "S_EN2", "S_EN3"]},
+       "title": {"type": "string"},
+       "score_item": {"enum": ["아이템", "핵심기술", "사업화", "팀", "참여의지", "영문"]},
+       "judge_question": {"type": "string"},
+       "governing": {"type": "string", "minLength": 5},
+       "subheads": {"type": "array", "items": {"type": "string"}},
+       "page_budget": {"type": "number", "minimum": 0, "maximum": 3},
+       "data_status": {"enum": ["sufficient", "partial", "missing"]},
+       "evidence_plan": {"type": "array", "items": {"type": "string"}},
+       "figure_ids": {"type": "array", "items": {"type": "string"}}}}},
+   "figures_plan": {"type": "array", "items": {"type": "object", "required": ["id", "type", "section_id", "purpose"],
+     "properties": {"id": {"type": "string"}, "type": {"type": "string"}, "section_id": {"type": "string"}, "purpose": {"type": "string"},
+                    "source_images": {"type": "array", "items": {"type": "string"}}}}}}}
