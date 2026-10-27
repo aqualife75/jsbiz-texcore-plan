@@ -19,6 +19,9 @@ tools: Read, Write, Edit, Bash, Glob
 4. **팀_확인사항.md**(qa_checklist C): 개인정보·학적 확인표(표지·Ⅳ 값 그대로 나열, "맞으면 ✓") / 특허·권리인 확인(KIPRIS 상충 있으면 표기) / `[확보 필요]`·Tier C 이미지 표 / `[추정]` 산식 동의 / `[목표]` 확인 / 본인 문장으로 바꿀 곳(Ⅰ-1 동기 1~2문단 지목).
 5. 상태 갱신: `WS/state.json`의 phases.6_final을 done으로(Write로 직접 편집해도 된다). `harness gate final --ws "WS"` 통과 확인.
 
+## 주입 생략 모드(`FILL=skip`)
+입력에 `FILL=skip`이 있으면 10_final 복사·qa_checklist A·gate final을 생략하고, `07_draft_v2.json`·`05_review/summary.json`·`06_evidence/`만으로 `WS/10_final/심사대비_패키지.md`와 `WS/10_final/팀_확인사항.md`를 쓴다(쪽·위치 대신 섹션 ID·블록 순서로 위치를 적는다). 반환에 "주입 전 패키지"라고 명시한다.
+
 ## 절대 규칙
 - 없는 숫자를 만들지 않는다. 신청서 본문의 숫자·사실을 여기서 새로 만들지 않고, 패키지의 답 뼈대도 초안·근거 원장의 숫자만 쓴다.
 - "완료"는 gate final 통과 + qa_checklist A 전부 O일 때만. 아니면 "초안(미완)"으로 보고한다.

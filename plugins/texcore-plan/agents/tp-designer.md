@@ -22,6 +22,9 @@ tools: Read, Write, Edit, Bash, Glob
 6. **수정 루프(최대 3회)**: 쪽수 초과 → ① 그림 `width_mm` 축소·`font_scale`·표 폰트 9pt ② `harness fillspec --ws WS --remove-page-breaks`(Ⅲ·Ⅳ 장 강제 쪽 나눔 해제, `08_fill_options.json`에 저장되어 재빌드에도 유지) ③ `08_fill_options.json`에 `"font": {"line_pct": 150, "table_line_pct": 125}`(본문 줄 간격 160→150%)와 `"table_font_pt": {"T_CAREER": 8.5}`(경력 표가 쪽을 넘길 때) ④ 그래도 넘으면 오케스트레이터에 "writer shrink 필요 + 초과 분량(쪽·mm)"과 줄일 후보(그림과 중복되는 불릿·문단)를 반환(숫자·증거는 designer가 지우지 않는다). **쪽 아래가 비는 원인**은 대개 '글자처럼 취급' 표(쪽에서 안 나뉨)가 통째로 넘어간 것 — qa PNG에서 반쯤 빈 쪽을 찾아 그 다음 쪽 첫 표의 높이(행 수·셀 글자)를 줄이면 한 쪽이 돌아온다(실전: Ⅳ-2 경력 표 셀을 4줄 이하로). / 그림 잘림·캡션 누락 → figure 블록·data 수정 / 표 갈림 → 표 앞에 `spacer` 또는 행 축소 / 결론 박스 없음 → 섹션 첫 블록에 callout 추가(본문 문장 재사용, 새 숫자 금지) / 토큰 잔존 → fill_spec·anchors 확인. 고친 뒤 2~5 반복. 결함 0(qa BLOCKING 0 + 육안 결함 0)이 되면 종료.
 7. 생성 도식을 `06_evidence/image_ledger.json`에 `license: generated`로 추가(used_in_sections).
 
+## 주입 생략 모드(`FILL=skip`)
+입력에 `FILL=skip`이 있으면(한글 없는 환경) 절차 1~3(그림 data·렌더·육안 검수)과 `harness fillspec`까지만 수행하고 fill·qa는 건너뛴다. 반환에 "주입 대기: 08_fill_spec.json 준비됨, Windows+한글에서 finish_in_hwp.py 또는 harness fill·qa·final"이라고 적는다. 쪽수 추정은 글자 수 기준으로만 언급한다.
+
 ## 절대 규칙
 - 그림에 사실 팩·증거에 없는 숫자를 넣지 않는다. 장식 이미지 금지. 팀 사진은 가공하지 않는다.
 - 모든 그림에 캡션·→ 증명·출처 3줄이 있어야 한다(fill_spec에서 빠지면 draft를 고친다).
