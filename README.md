@@ -27,6 +27,10 @@
 
 Claude Code 대신 OpenAI Codex를 쓰면 플러그인 설치 없이 **작업 폴더 ZIP**을 씁니다. [Releases](https://github.com/aqualife75/jsbiz-texcore-plan/releases/latest)에서 `정석biz-TexCore-Plan-v<버전>.zip`을 받아 압축을 풀고, `정석biz-텍스코어-프로젝트` 폴더를 Codex에서 연 뒤 `자료넣는곳`에 팀 자료를 넣고 "우리 팀 텍스코어 신청서 만들어줘"라고 말하면 됩니다. 같은 하네스(스킬·역할 6개·스크립트)가 `.agents/skills/texcore-plan`과 `.codex/agents`에 들어 있고, 결과는 `결과물/결과보기.html`에서 봅니다. 자세한 내용은 ZIP 안의 `사용설명서.html`. 저장소에서 직접 만들려면 `python scripts/build_codex_package.py`(→ `dist/`).
 
+## Gemini·ChatGPT 웹 사용자
+
+Claude Code도 Codex도 없으면 [프롬프트 북](https://aqualife75.github.io/jsbiz-texcore-plan/web.html)(원본 `web/텍스코어_신청서_프롬프트북.md`)을 씁니다. 같은 6단계를 붙여넣기 프롬프트 9단계로 풀어 두었고, 결과는 텍스트로 받아 한글 양식에 직접 옮깁니다. 자동 주입과 숫자 추적 검사는 없으므로 8단계 숫자 대조표로 대신합니다. 페이지는 `python scripts/build_web_prompts.py`로 다시 만듭니다.
+
 ## 실행
 
 ```
