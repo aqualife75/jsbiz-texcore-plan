@@ -2,7 +2,7 @@
 
 **정석biz 노하우 · v{VERSION}**
 
-1. `정석biz-TexCore-Plan-v{VERSION}.zip`을 모두 압축 해제하세요.
+1. `jsbiz-TexCore-Plan-v{VERSION}.zip`을 모두 압축 해제하세요.
 2. 압축을 푼 **`정석biz-텍스코어-프로젝트` 폴더를 그대로 Codex에서 여세요.**
 3. 그 폴더 안의 **`자료넣는곳`**에 한 팀의 자료를 복사하고, Codex 대화창에 아래 문장을 보내세요.
 
